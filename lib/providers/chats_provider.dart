@@ -20,12 +20,12 @@ class ChatProvider with ChangeNotifier {
       chatList.addAll((await ApiService.sendMessageGPT(
         message: msg,
         modelId: chosenModelId,
-      )) as Iterable<ChatModel>);
+      )));
     } else {
       chatList.addAll((await ApiService.sendMessage(
         message: msg,
         modelId: chosenModelId,
-      )) as Iterable<ChatModel>);
+      )));
     }
     notifyListeners();
   }
